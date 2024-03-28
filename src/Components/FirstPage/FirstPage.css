@@ -1,0 +1,239 @@
+.Image1 {
+ opacity: 70%;
+ position: absolute;
+ z-index: 30;
+ width: 100%;
+ height: 617px;
+}
+
+.Background {
+width: 100%;
+background-color: #001745;
+height: 617px;
+position: absolute;
+z-index: 20;
+}
+
+.Head {
+    position: absolute;
+    z-index: 50;
+    color: #ffffff;
+}
+
+.Hahmlet400Head {
+    width: 331px;
+    height: 41px;
+    font-size: 24px;
+    margin-left: 38px;
+    margin-top: 21px;
+    font-weight: 400;
+    font-family: Hahmlet;
+    line-height: 34.75px;
+    /* letter-spacing: -0.11em; */
+    text-align: left;
+
+}
+
+.Jaldi400Head {
+    width: 536px;
+    height: 178px;
+    margin-left: 127px;
+    margin-top: 49px;
+    font-weight: 400;
+    font-size: 64px;
+    font-family: Jaldi;
+    line-height: 66.1px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.Hahmlet300Head {
+    width: 1200px;
+    height: 268px;
+    margin-left: 127px;
+    margin-top: 0px;
+    font-family: Hahmlet;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    text-align: justified;
+}
+
+.Top {
+    position: absolute;
+    z-index: 50;
+    top: 643px;
+    
+
+}
+
+.ButtonAiroport {
+    width: 434px;
+    height: 278px;
+
+    border-radius: 100px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-width: 0px;
+    background: #d1e1f3;
+}
+
+.Statistic {
+    position: relative;
+    z-index: 50;
+    top: 925px;
+    width: 101px;
+    height: 83px;
+
+    left: 35px;
+    gap: 0px;
+    opacity: 70%;
+
+}
+
+.PlanetBlock {
+    position: relative;
+    z-index: 20;
+    height: 309px;
+    top: 940px;
+    gap: 0px;
+
+}
+
+.RussiaMap {
+    position: absolute;
+    z-index: 50;
+    right: 75%;
+    top: 20%;
+}
+
+.TextMap {
+    position: absolute;
+    z-index: 50;
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40.53px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #ffffff;
+    right: 55%;
+    top: 50%;
+
+}
+.PermMap {
+    position: absolute;
+    z-index: 50;
+    right: 35%;
+    top: 25%;
+}
+
+.TextMap1 {
+    position: absolute;
+    z-index: 50;
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40.53px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #ffffff;
+    right: 15%;
+    top: 50%;
+}
+
+.Jaldi400Centre {
+    position: relative;
+    z-index: 50;
+    width: 542px;
+    height: 69px;
+    top: 973px;
+    margin-left: 37px;
+    color: #2D647E;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 60.79px;
+    letter-spacing: 0.06em;
+    text-align: left
+}
+
+.Hahmlet300Centre {
+    position: relative;
+    z-index: 50;
+    width: 90%;
+    height: 105px;
+    margin-left: 5%;
+    margin-right: 5%;
+    top: 1024px;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 34.75px;
+    letter-spacing: -0.05em;
+    text-align: justified;
+    color: #2D647E;
+}
+
+.EndPage  {
+    width: 100%;
+    height: 381px;
+    top: 1105px;
+    position: relative;
+    z-index: 50;
+    background-color: #000218;
+
+}
+.EndImg {
+    opacity: 70%;
+}
+
+.EndLink {
+    width: 100%;
+    height: 234px;
+    background-color: #8593a3;
+}
+
+.Contacts {
+    width: 542px;
+height: 69px;
+margin-left: 37px;
+margin-top: -4px;
+font-family: Jaldi;
+font-size: 36px;
+font-weight: 400;
+line-height: 60.79px;
+letter-spacing: 0.06em;
+text-align: left;
+color: #2D647E;
+}
+
+.MapContacts {
+    position: relative;
+    height: 144px;
+
+    margin-right: 14%;
+    font-family: Jaldi;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40.53px;
+    letter-spacing: -0.04em;
+    text-align: center;
+
+}
+.LinkIcon{
+    position: relative;
+    left: 15%;
+}
+
+.LinkName {
+    position: relative;
+    top: 30px;
+    left: 7%;
+    font-family: Jaldi;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40.53px;
+    letter-spacing: -0.04em;
+    text-align: left;
+
+}

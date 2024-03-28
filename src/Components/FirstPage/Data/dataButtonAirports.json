@@ -1,0 +1,16 @@
+{
+    "Data": [
+            {
+                "Name": "airlines",
+                "ImageUrl": "airportAirlines.png"
+            },
+            {
+                "Name": "aeroflot",
+                "ImageUrl": "airportAeroflot.png"
+            },
+            {
+                "Name": "UTair",
+                "ImageUrl": "airportUTair.png"
+            }
+        ]
+    }

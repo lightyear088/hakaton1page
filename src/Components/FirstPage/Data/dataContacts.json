@@ -1,0 +1,17 @@
+{
+    "Data": [
+            {
+                "Name": "t.me/zashita.info.trans",
+                "IconUrl": "send.png"
+            },
+            {
+                "Name": "8(912) 345-67-89",
+                "IconUrl": "telephone.png"
+            },
+            {
+                "Name": "zashita.info.trans@mail.ru",
+                "IconUrl": "mail.png"
+            }
+
+        ]
+    }
