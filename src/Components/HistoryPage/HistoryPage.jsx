@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Table, DatePicker } from 'antd';
-import { Link } from 'react-router-dom';
+import { Table, Button } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
 import {requestToApi} from "../../Api/Get"
 import "./HistoryPage.css"
 import SelectImpl from "../StatisticCompanyPage/Select"
 import {useParams} from "react-router-dom";
+import {ArrowLeftOutlined} from '@ant-design/icons'
+
 
 const headerStatisticImg = require("../StatisticCompanyPage/Image/StatisticHeader.png");
 const homeImg = require("../StatisticCompanyPage/Image/logoVIT.png");
@@ -90,6 +92,7 @@ export const HistoryPage = () => {
         })
 
     const {id} = useParams()
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -277,6 +280,7 @@ export const HistoryPage = () => {
             <div className="filters">
                 {/* <p className="blok_name"></p> */}
                 <div className="filterBlock">
+                <Button icon={<ArrowLeftOutlined/>} onClick={() => navigate(-1)}/>
                 {filters}
                 </div>        
             </div>

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Table, DatePicker } from 'antd';
-import { Link } from 'react-router-dom';
+import { Table, DatePicker, Button } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
 import {requestToApi} from "../../Api/Get"
 import "./StatisticCompanyPage.css"
 import SelectImpl from "./Select"
+import {ArrowLeftOutlined} from '@ant-design/icons'
 
 
 const headerStatisticImg = require("./Image/StatisticHeader.png");
@@ -65,6 +66,7 @@ export const StatisticCompanyPage = () => {
         }
         })
 
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(isLoading) {
