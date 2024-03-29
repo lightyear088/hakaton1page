@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Table, DatePicker } from 'antd';
 import { Link } from 'react-router-dom';
 import {requestToApi} from "../../Api/Get"
-import "./StatisticCompanyPage.css"
-import SelectImpl from "./Select"
+import "./HistoryPage.css"
+import SelectImpl from "../StatisticCompanyPage/Select"
+import {useParams} from "react-router-dom";
 
-
-const headerStatisticImg = require("./Image/StatisticHeader.png");
-const homeImg = require("./Image/logoVIT.png");
+const headerStatisticImg = require("../StatisticCompanyPage/Image/StatisticHeader.png");
+const homeImg = require("../StatisticCompanyPage/Image/logoVIT.png");
 
 const errMessage = "error download img";
 
@@ -18,18 +18,40 @@ const columns = [
     key: "companyName"
     },
     {
-    title: "Количество рейсов",
-    dataIndex: "flightCount",
-    key: "flightCount"
+    title: "Город вылета",
+    dataIndex: "cityDepartureName",
+    key: "cityDepartureName"
     },
     {
-    title: "История полётов",
-    dataIndex: "flights",
-    key: "flights",
+    title: "Аэропорт вылета",
+    dataIndex: "airportDepartureName",
+    key: "airportDepartureName",
+    }, 
+    {
+    title: "Город прилёта",
+    dataIndex: "cityArrivalName",
+    key: "cityArrivalName",
+    }, 
+    {
+    title: "Аэропорт прилёта",
+    dataIndex: "airportArrivalName",
+    key: "airportArrivalName",
+    }, 
+    {
+    title: "Плановый полёт",
+    dataIndex: "plan",
+    key: "plan",
     render: (_, entity) => {
-        return <Link to={'/history/' + entity.companyId} >история полётов</Link>
+    return new Date(entity.flightPlanDeparture).toLocaleString() + " - " + new Date(entity.flightPlanArrival).toLocaleString()
     }},
-
+    {
+    title: "Фактический полёт",
+    dataIndex: "fact",
+    key: "fact",
+    render: (_, entity) => {
+    return new Date(entity.flightFactDeparture).toLocaleString() + " - " + new Date(entity.flightFactArrival).toLocaleString()
+    },}, 
+    
     ]
 
 const GridDataOption = {
@@ -39,18 +61,19 @@ const GridDataOption = {
     orderBy:'companyName'
     }
 
-const url = "/public/getstatistic";
+const url = "/v1/apps/flight/getlist";
 
-export const StatisticCompanyPage = () => {
+export const HistoryPage = () => {
 
     const [citiesDeparture, SetCitiesDeparture] = useState([]);
     const [citiesArrival, SetCitiesArrival] = useState([]);
     const [airportsDeparture, SetAirportsDeparture] = useState([]);
     const [airportsArrival, SetAirportsArrival] = useState([]);
+    const [companies, SetCompanies] = useState([]);
+    const [flights, SetFlights] = useState([]);
 
-    const [statistic, SetStatistic] = useState();
     const [isLoading, SetisLoading] = useState(true);
-    const { RangePicker } = DatePicker;
+
     const [pagination] = useState({
         current: 2,
         pageSize: 10,
@@ -61,23 +84,28 @@ export const StatisticCompanyPage = () => {
         onChange: (page, pageSize) => {
         GridDataOption.page = page;
         GridDataOption.rowCount = pageSize;
+        
         SetisLoading(true);
         }
         })
 
+    const {id} = useParams()
+
 
     useEffect(() => {
+        GridDataOption.namedFilters = []
+        GridDataOption.namedFilters.push({name: "companyId", value: parseInt(id)})
         if(isLoading) {
             requestToApi.post(url, GridDataOption)
             .then(data => {
-            SetStatistic(data.result);
+            SetFlights(data.result);
             pagination.total = data.allRowCount;
             pagination.current = data.page;
             pagination.pageSize = data.rowCount;
             })
             .finally(() => SetisLoading(false));
             }
-    }, [isLoading])
+    }, [id, isLoading, pagination])
 
     let filters = [
         <SelectImpl 
@@ -226,45 +254,7 @@ export const StatisticCompanyPage = () => {
                     label: airport.airportName,
                     value: airport.airportId
                 }
-            })}/>,
-
-            <span style={{"marginLeft": "6px", "color": "white"}}>
-                дата вылета</span>,
-                <RangePicker 
-            style = {{"margin-left": "0.5em", "width":"340px"}}
-            showTime={true}
-            onCalendarChange={(value) => {
-                if(value !== undefined && value[0] !== null && value[1] !== null){
-                    let existIndex = GridDataOption.namedFilters.findIndex(nf => nf.name === "dateRangeDeparture");
-                    if(existIndex !== -1){
-                        GridDataOption.namedFilters.splice(existIndex, 1, {name:"dateRangeDeparture", value: [value[0].valueOf(), value[1].valueOf()]});
-                    }else{
-                        GridDataOption.namedFilters.push({name:"dateRangeDeparture", value: [value[0].valueOf(), value[1].valueOf()]});
-                    }
-                }else{
-                    GridDataOption.namedFilters = GridDataOption.namedFilters.filter(nf => nf.name !== "dateRangeDeparture")
-                }
-                reload()
-            }}/>,
-
-            <span style={{"marginLeft": "6px", "color": "white"}}>
-                дата прилёта</span>,
-                <RangePicker 
-            style = {{"margin-left": "0.5em", "width":"340px"}}
-            showTime={true}
-            onCalendarChange={(value) => {
-                if(value !== undefined && value[0] !== null && value[1] !== null){
-                    let existIndex = GridDataOption.namedFilters.findIndex(nf => nf.name === "dateRangeArrival");
-                    if(existIndex !== -1){
-                        GridDataOption.namedFilters.splice(existIndex, 1, {name:"dateRangeArrival", value: [value[0].valueOf(), value[1].valueOf()]});
-                    }else{
-                        GridDataOption.namedFilters.push({name:"dateRangeArrival", value: [value[0].valueOf(), value[1].valueOf()]});
-                    }
-                }else{
-                    GridDataOption.namedFilters = GridDataOption.namedFilters.filter(nf => nf.name !== "dateRangeArrival")
-                }
-                reload()
-            }}/>
+            })}/>
 
         ]
 
@@ -292,10 +282,10 @@ export const StatisticCompanyPage = () => {
             </div>
             
             <div className="statisticTable">
-                <Table dataSource={statistic} columns={columns} pagination={pagination} loading={isLoading} rowKey={(record) => record.companyId}/>
+                <Table dataSource={flights} columns={columns} pagination={pagination} loading={isLoading} rowKey={(record) => record.flightId}/>
             </div>
         </div>
     )
 }
 
-export default StatisticCompanyPage
+export default HistoryPage
