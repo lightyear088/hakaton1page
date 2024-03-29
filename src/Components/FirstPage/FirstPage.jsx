@@ -12,7 +12,8 @@ const permMap = require("./Image/PermMap.png");
 const endPage = require("./Image/endPages.png");
 const dataContacts = require("./Data/dataContacts.json");
 
-const calculationMethod ="НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯНАША КОМПАНИЯ НАША КОМПАНИЯНАША формула КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯ НАША КОМПАНИЯНАША КОМПАНИЯ НАША КОМПАНИЯ"
+const calculationMethod ="Пунктуальнось - коэффициент пунктуальности рассчитывается как отношение количества не задержанных рейсов ко всем рейсам у авиакомпании."
+const calculationMethod2 ="Задержка - это кличество рейсов у которых разница между фактической и плановой датами отправления больше пятнадцати минут. Если разница меньше пятнадцати минут, то такой рейс не считаетя задержанным"
 
 const errMessage = "error download img";
 
@@ -21,43 +22,52 @@ export const FirstPage = () => {
     console.log(dataContacts)
     return (
         <div>
-            <div className="Background" ></div>
-            <img className="Image1" src={helloImgsrc} alt={errMessage}></img> 
-            <div className="Head">
-                <div className="Hahmlet400Head">ФГУП «ЗащитаИнфоТранс»</div>
-                <div className="Jaldi400Head">МЫ РАБОТАЕМ ДЛЯ ВАС </div>
-                <div className="Hahmlet300Head">{description}</div>
+            <div className="header_section">
+                <div className="Background" ></div>
+                <img className="Image1" src={helloImgsrc} alt={errMessage}></img> 
+                <div className="Head">
+                    <div className="Hahmlet400Head">ФГУП «ЗащитаИнфоТранс»</div>
+                    <div className="Jaldi400Head">МЫ РАБОТАЕМ ДЛЯ ВАС </div>
+                    <div className="Hahmlet300Head">{description}</div>
+                </div>
             </div>
-            <div className="Top">
-                {
-                    dataButtonaIirports.Data.map((item) => {
-                        return <button className="ButtonAiroport"><img className="CompanyImg" src={require(`./Image/${item.ImageUrl}`)} alt={errMessage}></img></button>
-                    })
-                }
+            <div className="top_section">
+                <div className="Top">
+                    {
+                        dataButtonaIirports.Data.map((item) => {
+                            return <button className="ButtonAiroport"><img className="CompanyImg" src={require(`./Image/${item.ImageUrl}`)} alt={errMessage}></img></button>
+                        })
+                    }
+                </div>
+                <Link to="/statisticCompanyPage" className="Statistic">
+                    <img src={statistic} alt={errMessage} />
+                </Link>
             </div>
-            <Link to="/statisticCompanyPage" className="Statistic">
-                <img src={statistic} alt={errMessage} />
-            </Link>
             <div className="PlanetBlock">
-                <img  src={planetImg}  width="100%" alt={errMessage}></img>
+                <img  src={planetImg} className="planetBlockImg"  width="100%" alt={errMessage}></img>
                 <button><img src={russiaMap} alt={errMessage} className="RussiaMap"></img></button>
                 <button><span className="TextMap">Российская федерация</span></button>
                 <button><img src={permMap} className="PermMap" alt={errMessage}></img></button>
                 <button onClick={() => console.log("dsad")}><span className="TextMap1">Пермский край</span></button>
             </div>
-            <div className="Jaldi400Centre">Способ расчета </div>
-            <div className="Hahmlet300Centre">{calculationMethod}</div>
+            <div className="calculate_info_section">
+                <div className="Jaldi400Centre">Способ расчета </div>
+                <div className="Hahmlet300Centre">{calculationMethod}</div>
+                <div className="Hahmlet300Centre">{calculationMethod2}</div>
+            </div>
             <div className="EndPage" >
                 <img className="EndImg" src={endPage} alt={errMessage} width="100%"></img>
                 <div className="EndLink">
                     <div className="Contacts" >Контакты</div>
-                    {
-                        dataContacts.Data.map((item) => {return <span className="MapContacts">
+                    <div className="ContactList">
+                        {
+                        dataContacts.Data.map((item) => {return <div className="MapContacts">
                             <img className="LinkIcon" src={require(`./Image/${item.IconUrl}`)} alt={errMessage}></img>
-                            <span className="LinkName ">{item.Name}</span>
-                        </span>
+                            <p className="LinkName ">{item.Name}</p>
+                        </div>
                         })
-                    }
+                        }
+                    </div>  
                 </div>
             </div>
         </div>

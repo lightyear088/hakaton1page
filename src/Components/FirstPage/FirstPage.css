@@ -1,5 +1,11 @@
+.header_section
+{
+    width: 100%;
+    height: 617px;
+}
+
 .Image1 {
- opacity: 70%;
+ opacity: 40%;
  position: absolute;
  z-index: 30;
  width: 100%;
@@ -60,12 +66,16 @@ z-index: 20;
     text-align: justified;
 }
 
-.Top {
-    position: absolute;
-    z-index: 50;
-    top: 643px;
-    
+.top_section
+{
+    margin: 20px 0 20px 0;
+}
 
+.Top {
+    position: relative;
+    z-index: 50;
+    justify-content: center;
+    display: flex;
 }
 
 .ButtonAiroport {
@@ -82,7 +92,6 @@ z-index: 20;
 .Statistic {
     position: relative;
     z-index: 50;
-    top: 925px;
     width: 101px;
     height: 83px;
 
@@ -95,10 +104,13 @@ z-index: 20;
 .PlanetBlock {
     position: relative;
     z-index: 20;
-    height: 309px;
-    top: 940px;
+    height: 341px;
     gap: 0px;
+}
 
+.planetBlockImg
+{
+    height: 341px;
 }
 
 .RussiaMap {
@@ -118,9 +130,9 @@ z-index: 20;
     letter-spacing: -0.04em;
     text-align: left;
     color: #ffffff;
-    right: 55%;
+    right: 60%;
     top: 50%;
-
+    font-family: Jaldi;
 }
 .PermMap {
     position: absolute;
@@ -139,8 +151,14 @@ z-index: 20;
     letter-spacing: -0.04em;
     text-align: left;
     color: #ffffff;
-    right: 15%;
+    right: 23%;
     top: 50%;
+    font-family: Jaldi;
+}
+
+.calculate_info_section
+{
+    margin: 40px 0 42px 0;
 }
 
 .Jaldi400Centre {
@@ -148,41 +166,49 @@ z-index: 20;
     z-index: 50;
     width: 542px;
     height: 69px;
-    top: 973px;
     margin-left: 37px;
     color: #2D647E;
     font-size: 36px;
     font-weight: 400;
     line-height: 60.79px;
     letter-spacing: 0.06em;
-    text-align: left
+    text-align: left;
+    font-family: Jaldi
 }
 
 .Hahmlet300Centre {
     position: relative;
     z-index: 50;
     width: 90%;
-    height: 105px;
     margin-left: 5%;
     margin-right: 5%;
-    top: 1024px;
     font-size: 24px;
     font-weight: 300;
     line-height: 34.75px;
     letter-spacing: -0.05em;
     text-align: justified;
     color: #2D647E;
+    font-family: Hahmlet;
+
 }
 
 .EndPage  {
     width: 100%;
     height: 381px;
-    top: 1105px;
     position: relative;
     z-index: 50;
     background-color: #000218;
 
 }
+
+.ContactList
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 14%;
+}
+
 .EndImg {
     opacity: 70%;
 }
@@ -209,24 +235,29 @@ color: #2D647E;
 
 .MapContacts {
     position: relative;
-    height: 144px;
+    max-height: 144px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
 
-    margin-right: 14%;
     font-family: Jaldi;
     font-size: 24px;
     font-weight: 400;
     line-height: 40.53px;
     letter-spacing: -0.04em;
     text-align: center;
+    align-items: center;
 
 }
 .LinkIcon{
-    position: relative;
+    position: flex;
     left: 15%;
+    height: 80px;
+    width: 80px;
 }
 
 .LinkName {
-    position: relative;
+    position: flex;
     top: 30px;
     left: 7%;
     font-family: Jaldi;
