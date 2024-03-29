@@ -67,10 +67,10 @@ body
 {
     display: flex;
     flex-direction: row;
-    column-gap: 130px;
+    column-gap: 30px;
     align-items: center;
     justify-content: center;
-    height: 66px;
+    height: 86px;
     align-items: center;
     padding: 0 82px 0 82px;
     
