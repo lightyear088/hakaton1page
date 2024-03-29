@@ -1,0 +1,25 @@
+{
+    "Data": [
+        {
+            "company": "Аэрофлот",
+            "count": 100,
+            "raiting": 4.5
+          },
+          {
+            "company": "S7 Airlines",
+            "count": 80,
+            "raiting": 4.2
+          },
+          {
+            "company": "Utair",
+            "count": 70,
+            "raiting": 3.9
+          },
+          {
+            "Company": "Pobeda",
+            "count": 60,
+            "raiting": 3.7
+          }
+
+        ]
+    }

@@ -1,0 +1,104 @@
+body
+{
+    padding: 0;
+    margin: 0;
+}
+.headerStatistic
+{
+    position: relative;
+    width: 100%;
+    height: 90px;
+}
+
+.headerStatisticImg 
+{
+    opacity: 70%;
+    position: absolute;
+    z-index: 30;
+    width: 100%;
+    height: 90px;
+}
+
+.BackgroundImg
+{
+    width: 100%;
+    background-color: #001745;
+    height: 90px;
+    position: absolute;
+    z-index: 20;
+}
+
+.head
+{
+    position: absolute;
+    z-index: 50;
+    color: #ffffff;
+}
+
+.Hahmlet400Head {
+    width: 331px;
+    height: 41px;
+    font-size: 24px;
+    margin-left: 38px;
+    margin-top: 21px;
+    font-weight: 400;
+    font-family: Hahmlet;
+    line-height: 34.75px;
+    /* letter-spacing: -0.11em; */
+    text-align: left;
+
+}
+
+.filters
+{
+    background-color: #2c2c2c;
+    height: 86px;
+}
+
+.filters .blok_name
+{
+    height: 25px;
+    padding-left: 82px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.filters .filterBlock
+{
+    display: flex;
+    flex-direction: row;
+    column-gap: 130px;
+    align-items: center;
+    justify-content: center;
+    height: 66px;
+    align-items: center;
+    padding: 0 82px 0 82px;
+    
+}
+
+.filters .filterBlock .ant-dropdown-trigger, .search
+{
+    display: flex;
+    color: #ffffff;
+    font-size: 20px;
+    border: solid 1px #A2A9BA;
+    background-color: #A2A9BA;
+    width: 250px;
+    height: 50px;
+    align-items: center;
+}
+
+.search::placeholder 
+{
+    color: #ffffff;
+}
+
+.filters .filterBlock .ant-dropdown-trigger .anticon
+{
+    margin-left: auto;
+}
+
+.statisticTable
+{
+    margin: 0 50px 0 50px;
+}

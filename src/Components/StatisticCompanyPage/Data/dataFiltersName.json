@@ -1,0 +1,25 @@
+{
+    "Data": [
+            {
+                "Name": "Город отправления",
+                "Type": "Combobox"
+            },
+            {
+                "Name": "Аэропорт отправления",
+                "Type": "Combobox"
+            },
+            {
+                "Name": "Город посадки",
+                "Type": "Combobox"
+            },
+            {
+                "Name": "Аэропорт посадки",
+                "Type": "Combobox"
+            },
+            {
+                "Name": "Период рейсов",
+                "Type": "Textbox"
+            }
+
+        ]
+    }

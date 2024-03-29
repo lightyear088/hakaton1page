@@ -1,7 +1,6 @@
 import React from "react"
 import "./FirstPage.css"
-
-
+import { Link } from 'react-router-dom';
 
 const helloImgsrc = require("./Image/HelloIMG1.png");
 const dataButtonaIirports = require("./Data/dataButtonAirports.json")
@@ -36,7 +35,9 @@ export const FirstPage = () => {
                     })
                 }
             </div>
-            <button className="Statistic"><img src={statistic} alt={errMessage} ></img></button>
+            <Link to="/statisticCompanyPage" className="Statistic">
+                <img src={statistic} alt={errMessage} />
+            </Link>
             <div className="PlanetBlock">
                 <img  src={planetImg}  width="100%" alt={errMessage}></img>
                 <button><img src={russiaMap} alt={errMessage} className="RussiaMap"></img></button>
@@ -59,9 +60,6 @@ export const FirstPage = () => {
                     }
                 </div>
             </div>
-            
-
-
         </div>
     )
 }

@@ -1,0 +1,21 @@
+
+    {
+        "Data": 
+            [
+                {
+                    "title": "Авиакомпания",
+                    "dataIndex": "company",
+                    "key": "company"
+                },
+                {
+                    "title": "Количество рейсов",
+                    "dataIndex": "count",
+                    "key": "count"
+                },
+                {
+                    "title": "Рейтинг",
+                    "dataIndex": "raiting",
+                    "key": "raiting"
+                }
+            ]
+        }
