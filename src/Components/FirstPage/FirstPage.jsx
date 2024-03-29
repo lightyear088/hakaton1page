@@ -12,8 +12,7 @@ const permMap = require("./Image/PermMap.png");
 const endPage = require("./Image/endPages.png");
 const dataContacts = require("./Data/dataContacts.json");
 
-const calculationMethod ="Пунктуальнось - коэффициент пунктуальности рассчитывается как отношение количества не задержанных рейсов ко всем рейсам у авиакомпании."
-const calculationMethod2 ="Задержка - это кличество рейсов у которых разница между фактической и плановой датами отправления больше пятнадцати минут. Если разница меньше пятнадцати минут, то такой рейс не считаетя задержанным"
+const calculationMethod2 ="Мы считаем, что любой рейс, прибывший в течение 15 минут после опубликованного времени прибытия, был выполнен с соблюдением требования к пунктуальности. Мы посчитали, сколько рейсов вылетели и прилетели вовремя, и выразили этот показатель в процентном отношении. Чем выше показатель, тем выше процент прибывающих вовремя рейсов. Например, оценка 8,5 означает, что 85% рейсов были выполнены вовремя."
 
 const errMessage = "error download img";
 
@@ -52,7 +51,6 @@ export const FirstPage = () => {
             </div>
             <div className="calculate_info_section">
                 <div className="Jaldi400Centre">Способ расчета </div>
-                <div className="Hahmlet300Centre">{calculationMethod}</div>
                 <div className="Hahmlet300Centre">{calculationMethod2}</div>
             </div>
             <div className="EndPage" >
