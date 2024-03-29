@@ -11,6 +11,7 @@ const russiaMap = require("./Image/RussiaMap.png");
 const permMap = require("./Image/PermMap.png");
 const endPage = require("./Image/endPages.png");
 const dataContacts = require("./Data/dataContacts.json");
+const homeImg = require("./Image/logoVIT.png");
 
 const calculationMethod2 ="Мы считаем, что любой рейс, прибывший в течение 15 минут после опубликованного времени прибытия, был выполнен с соблюдением требования к пунктуальности. Мы посчитали, сколько рейсов вылетели и прилетели вовремя, и выразили этот показатель в процентном отношении. Чем выше показатель, тем выше процент прибывающих вовремя рейсов. Например, оценка 8,5 означает, что 85% рейсов были выполнены вовремя."
 
@@ -25,7 +26,9 @@ export const FirstPage = () => {
                 <div className="Background" ></div>
                 <img className="Image1" src={helloImgsrc} alt={errMessage}></img> 
                 <div className="Head">
-                    <div className="Hahmlet400Head">ФГУП «ЗащитаИнфоТранс»</div>
+                    <Link to="/" className="homeButton">
+                        <img src={homeImg} alt={errMessage} width={"180px"} style={{"marginLeft": "50px", "marginTop": "10px"}} className="logoVIT"/>
+                    </Link>
                     <div className="Jaldi400Head">МЫ РАБОТАЕМ ДЛЯ ВАС </div>
                     <div className="Hahmlet300Head">{description}</div>
                 </div>
