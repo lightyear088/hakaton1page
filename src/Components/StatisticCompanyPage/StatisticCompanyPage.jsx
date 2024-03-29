@@ -24,6 +24,14 @@ const columns = [
     key: "flightCount"
     },
     {
+    title: "Пункктуальность",
+    dataIndex: "rating",
+    key: "rating",
+
+    render: (_, entity) => {
+    return <div>{((entity.flightCount === 0) ? "нет полётов" : (Math.round((entity.ratingDeparture +entity.ratingArrival)/2) / 10))}</div>
+    }},
+    {
     title: "История полётов",
     dataIndex: "flights",
     key: "flights",
